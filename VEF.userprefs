@@ -1,0 +1,12 @@
+﻿<Properties StartupItem="VEF.WPF.Test\VEF.WPF.Test.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Themes\Themes.WPF.Default\IDE\Interaction\SettingsDialog.xaml">
+    <Files>
+      <File FileName="Themes\Themes.WPF.Default\IDE\Interaction\SettingsDialog.xaml" Line="10" Column="34" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

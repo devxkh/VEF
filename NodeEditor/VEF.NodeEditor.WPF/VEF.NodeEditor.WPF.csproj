@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BA0C7471-0784-4E89-8935-56D97A4122D2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VEF.NodeEditor.WPF</RootNamespace>
+    <AssemblyName>VEF.NodeEditor.WPF</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\VEX\build\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MahApps.Metro">
+      <HintPath>..\..\extlibs\net_4_5\MahApps\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\VEX\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\VEX\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\VEX\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Action\Action.cs" />
+    <Compile Include="Action\ActionEventArgs.cs" />
+    <Compile Include="Action\ActionResult.cs" />
+    <Compile Include="Action\History.cs" />
+    <Compile Include="Action\HistoryOperation.cs" />
+    <Compile Include="Action\IAction.cs" />
+    <Compile Include="Controls\AnimationHelper.cs" />
+    <Compile Include="Controls\BezierLine.cs" />
+    <Compile Include="Controls\ConnectionDragCompletedEventArgs.cs" />
+    <Compile Include="Controls\ConnectionDragEventArgs.cs" />
+    <Compile Include="Controls\ConnectionDraggingEventArgs.cs" />
+    <Compile Include="Controls\ConnectionDragStartedEventArgs.cs" />
+    <Compile Include="Controls\ConnectorItem.cs" />
+    <Compile Include="Controls\ConnectorItemDragCompletedEventArgs.cs" />
+    <Compile Include="Controls\ConnectorItemDraggingEventArgs.cs" />
+    <Compile Include="Controls\ConnectorItemDragStartedEventArgs.cs" />
+    <Compile Include="Controls\ElementItem.cs" />
+    <Compile Include="Controls\ElementItemsControl.cs" />
+    <Compile Include="Controls\GraphControl.cs" />
+    <Compile Include="Controls\ZoomAndPanControl.cs" />
+    <Compile Include="Controls\ZoomAndPanControl_IScrollInfo.cs" />
+    <Compile Include="Converters\ColorToBrushConverter.cs" />
+    <Compile Include="Diagram\Action\AddAndSelectSingleNode.cs" />
+    <Compile Include="Diagram\Action\ConnectPorts.cs" />
+    <Compile Include="Diagram\Action\DeleteSelectedNodes.cs" />
+    <Compile Include="Diagram\Action\DiagramAction.cs" />
+    <Compile Include="Diagram\Action\DisconnectPort.cs" />
+    <Compile Include="Diagram\Action\LoadDiagram.cs" />
+    <Compile Include="Diagram\Action\ModifySelectedNodes.cs" />
+    <Compile Include="Diagram\Action\MoveSelectedNodes.cs" />
+    <Compile Include="Diagram\Action\NewDiagram.cs" />
+    <Compile Include="Diagram\Action\NodeAction.cs" />
+    <Compile Include="Diagram\Action\SaveDiagram.cs" />
+    <Compile Include="Diagram\Diagram.cs" />
+    <Compile Include="Diagram\DiagramEventArgs.cs" />
+    <Compile Include="Diagram\Example\SimpleNode.cs" />
+    <Compile Include="Diagram\Example\SimplePort.cs" />
+    <Compile Include="Diagram\Example\SimplePortConnector.cs" />
+    <Compile Include="Diagram\GUI\Alignment.cs" />
+    <Compile Include="Diagram\GUI\Drawing.cs" />
+    <Compile Include="Diagram\GUI\Label.cs" />
+    <Compile Include="Diagram\GUI\LeftRightAligner.cs" />
+    <Compile Include="Diagram\GUI\MultiComponent.cs" />
+    <Compile Include="Diagram\GUI\PortImages.cs" />
+    <Compile Include="Diagram\GUI\Separator.cs" />
+    <Compile Include="Diagram\GUI\TestInputReceiver.cs" />
+    <Compile Include="Diagram\GUI\Title.cs" />
+    <Compile Include="Diagram\IElementParent.cs" />
+    <Compile Include="Diagram\INodeComponent.cs" />
+    <Compile Include="Diagram\Node.cs" />
+    <Compile Include="Diagram\NodeComponent.cs" />
+    <Compile Include="Diagram\NodeComponentEventArgs.cs" />
+    <Compile Include="Diagram\NodeEventArgs.cs" />
+    <Compile Include="Diagram\Port.cs" />
+    <Compile Include="Diagram\PortConnector.cs" />
+    <Compile Include="Diagram\PortEventArgs.cs" />
+    <Compile Include="Helper\ElementViewTemplateSelector.cs" />
+    <Compile Include="Nodes\ColorInput.cs" />
+    <Compile Include="Nodes\DynamicNode.cs" />
+    <Compile Include="Nodes\Multiply.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="ViewModel\ConnectionViewModel.cs" />
+    <Compile Include="ViewModel\ConnectorViewModel.cs" />
+    <Compile Include="ViewModel\ElementViewModel.cs" />
+    <Compile Include="ViewModel\GraphViewModel.cs" />
+    <Compile Include="ViewModel\InputConnectorViewModel.cs" />
+    <Compile Include="ViewModel\OutputConnectorViewModel.cs" />
+    <Compile Include="View\GraphControlView.xaml.cs">
+      <DependentUpon>GraphControlView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VisualTreeUtility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\GraphControlView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\PortImage_Down.png" />
+    <Content Include="Resources\PortImage_Left.png" />
+    <Content Include="Resources\PortImage_Right.png" />
+    <Content Include="Resources\PortImage_Up.png" />
+    <Content Include="Resources\Right_PortImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\VEF.Core.WPF\VEF.Core.WPF.csproj">
+      <Project>{3387cf61-06cf-4650-aee8-04801cdd6d03}</Project>
+      <Name>VEF.Core.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\VEF.XForms\VEF.XForms.csproj">
+      <Project>{67f9d3a8-f71e-4428-913f-c37ae82cdb24}</Project>
+      <Name>VEF.XForms</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"
+if exist "$(TargetPath)" if not exist "$(TargetPath).locked" move "$(TargetPath)" "$(TargetPath).locked"</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

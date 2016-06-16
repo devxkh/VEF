@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>302a2d9b-e375-415c-b6cd-bb4394329a29</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>VEF.Core</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Action\Action.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Action\ActionEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Action\ActionResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Action\History.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Action\HistoryOperation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Action\IAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\AnimationHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\BezierLine.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ConnectionDragCompletedEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ConnectionDragEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ConnectionDraggingEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ConnectionDragStartedEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ConnectorItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ConnectorItemDragCompletedEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ConnectorItemDraggingEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ConnectorItemDragStartedEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ElementItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ElementItemsControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\GraphControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ZoomAndPanControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ZoomAndPanControl_IScrollInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ColorToBrushConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\Action\AddAndSelectSingleNode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\Action\ConnectPorts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\Action\DeleteSelectedNodes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\Action\DiagramAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\Action\DisconnectPort.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\Action\LoadDiagram.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\Action\ModifySelectedNodes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\Action\MoveSelectedNodes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\Action\NewDiagram.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\Action\NodeAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\Action\SaveDiagram.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\Diagram.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\DiagramEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\Example\SimpleNode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\Example\SimplePort.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\Example\SimplePortConnector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\GUI\Alignment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\GUI\Drawing.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\GUI\Label.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\GUI\LeftRightAligner.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\GUI\MultiComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\GUI\PortImages.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\GUI\Separator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\GUI\TestInputReceiver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\GUI\Title.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\IElementParent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\INodeComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\Node.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\NodeComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\NodeComponentEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\NodeEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\Port.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\PortConnector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Diagram\PortEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helper\ElementViewTemplateSelector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Nodes\ColorInput.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Nodes\DynamicNode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Nodes\Multiply.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ConnectionViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ConnectorViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ElementViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\GraphViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\InputConnectorViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\OutputConnectorViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)VisualTreeUtility.cs" />
+  </ItemGroup>
+</Project>
