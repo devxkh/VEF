@@ -20,6 +20,8 @@ using VEF.Interfaces.Services;
 using Xceed.Wpf.AvalonDock.Controls;
 using Xceed.Wpf.AvalonDock.Layout;
 using Xceed.Wpf.AvalonDock.Layout.Serialization;
+using Xceed.Wpf.AvalonDock;
+using VEF.Interfaces.Events;
 
 namespace VEF.View.Shell
 {
@@ -117,6 +119,18 @@ namespace VEF.View.Shell
 
         #region Events
 
+
+        private void dockManager_ActiveContentChanged(object sender, EventArgs e)
+        {
+            DockingManager manager = sender as DockingManager;
+            ContentViewModel cvm = manager.ActiveContent as ContentViewModel;
+
+            VEFModule.EventAggregator.GetEvent<ActiveContentChangedEvent>().Publish(cvm);
+
+          //  if (cvm != null) Logger.Log("Active document changed to " + cvm.Title, LogCategory.Info, LogPriority.None);
+        }
+
+
         private void _docContextMenu_Opened(object sender, RoutedEventArgs e)
         {
             RefreshMenuBinding();
@@ -194,7 +208,7 @@ namespace VEF.View.Shell
             get
             {
                 if (_logger == null)
-                    _logger = VEFModule.UnityContainer.Resolve(typeof(ILoggerService), "loggerService") as ILoggerService; 
+                    _logger = VEFModule.UnityContainer.Resolve(typeof(ILoggerService), "") as ILoggerService; 
 
                 return _logger;
             }
