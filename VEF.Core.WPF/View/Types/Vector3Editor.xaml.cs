@@ -39,9 +39,15 @@ namespace VEF.View.Types
         //[RegularExpression("[A-Z]{2}[0-9]{3}", ErrorMessage = "Customer no must be 2 capital letters and 3 numbers.")]
         public object Vector3Value
         {
-            get { return GetValue(Vector3ValueProperty); }
+            get {
+                return GetValue(Vector3ValueProperty);
+            }
             private set
             {
+                //var dataContext = this.DataContext as Xceed.Wpf.Toolkit.PropertyGrid.PropertyItem;
+                //if (dataContext != null)
+                //    dataContext.Value = value;
+
                 SetValue(Vector3ValueProperty, value);
             }
         }

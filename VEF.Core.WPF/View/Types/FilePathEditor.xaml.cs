@@ -106,7 +106,9 @@ namespace VEF.View.Types
         //[RegularExpression("[A-Z]{2}[0-9]{3}", ErrorMessage = "Customer no must be 2 capital letters and 3 numbers.")]
         public object PathValue
         {
-            get { return GetValue(PathValueProperty); }
+            get {
+                return GetValue(PathValueProperty);
+            }
             private set
             {
                 SetValue(PathValueProperty, value);

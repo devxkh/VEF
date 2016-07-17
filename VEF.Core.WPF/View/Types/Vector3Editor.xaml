@@ -17,8 +17,10 @@
             <ColumnDefinition Width="25*"/>
         </Grid.ColumnDefinitions>
 
+        <TextBox  
+                 Text="{Binding Path=Value}" Name="tbFile"   />
         
-        <Controls:NumericUpDown Controls:TextBoxHelper.Watermark="X"
+            <!--<Controls:NumericUpDown Controls:TextBoxHelper.Watermark="X"
                                 Interval=".1"
                                         StringFormat="0.00"
                                         Delay="500" Value="{Binding Path=Value.x}"
@@ -32,7 +34,7 @@
                                         Interval=".1"
                                         StringFormat="0.00"
                                  Delay="500" Value="{Binding Path=Value.z}"
-                                        Speedup="true"  Grid.Column="2"/>
+                                        Speedup="true"  Grid.Column="2"/>-->
 
     </Grid>
 </UserControl>
