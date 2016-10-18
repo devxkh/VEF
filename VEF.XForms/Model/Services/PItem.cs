@@ -114,10 +114,10 @@ namespace VEF.Model.Services
                 m_Items = value;
             }
         }
-
+        
         [Display(AutoGenerateField = false)]
         public virtual List<IMenuItem> MenuOptions { get; set; }
-
+        
         [Display(AutoGenerateField = false)]
         [DataMember]
         public virtual IItem Parent { get; set; }

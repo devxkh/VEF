@@ -38,8 +38,16 @@ namespace VEF.Core.WPF.View
 
         private void propGrid_SelectedObjectChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
+         //   propGrid.ShowAdvancedOptions = true;
+     
             foreach (PropertyItem prop in propGrid.Properties)
             {
+                //prop.AdvancedOptionsIcon = null;
+                //prop.AdvancedOptionsTooltip = "asdasdfsa";
+                //propGrid.AdvancedOptionsMenu = new ContextMenu();
+                //propGrid.AdvancedOptionsMenu.Items.Add(new MenuItem() { Header = "Kack nur per object" });            
+
+
                 if (prop.IsExpandable) //Only expand things marked as Expandable, otherwise it will expand everything possible, such as strings, which you probably don't want.
                 {
                     prop.IsExpanded = true; //This will expand the property.

@@ -3,3 +3,9 @@
 ################################################################################
 
 /VEF.XForms/obj/Debug
+/VEF.Core.WPF
+/Themes/Themes.WPF.Default/obj/Debug
+/NodeEditor
+/build/Debug
+/VEF.XForms/obj/Release
+/VEF.XForms/bin/Release

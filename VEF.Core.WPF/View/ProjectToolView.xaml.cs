@@ -202,7 +202,7 @@ namespace VEF.Core.View
 
                 IOpenDocumentService odS = m_Container.Resolve<IOpenDocumentService>();
 
-                var openValue = odS.OpenFromID(item.ContentID, true);
+                var openValue = odS.OpenFromID(item.ContentID, true,true);
 
                 //no handler found? -> try open model
                 if (openValue == null)
