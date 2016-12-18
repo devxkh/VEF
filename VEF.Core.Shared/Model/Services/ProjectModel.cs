@@ -41,8 +41,8 @@ namespace Module.PFExplorer.Service
                     {
                         if (File.Exists(Location.ToString()))
                         {
-                            System.IO.File.Move(Location.ToString(), Folder + "\\" + value + Path.GetExtension(Location.ToString()));
-                            Location = Folder  + "\\" + value + Path.GetExtension(Location.ToString());
+                            System.IO.File.Move(Location.ToString(), Folder + "\\" + Path.GetFileNameWithoutExtension(value) + Path.GetExtension(Location.ToString()));
+                            Location = Folder  + "\\" + Path.GetFileNameWithoutExtension(value) + Path.GetExtension(Location.ToString());
                         }
                     }
                     base.Name = value;

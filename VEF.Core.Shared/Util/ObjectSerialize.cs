@@ -14,8 +14,6 @@ namespace VEF.VEF_Helpers
     {
         public static void Serialize<T>(T dataToSerialize, string filePath, List<Type> knownTypes = null)
         {
-            try
-            {
                 // Determine whether the directory exists.
                 if (!Directory.Exists(Path.GetDirectoryName(filePath)))
                     Directory.CreateDirectory(Path.GetDirectoryName(filePath));
@@ -28,29 +26,17 @@ namespace VEF.VEF_Helpers
                     serializer.WriteObject(writer, dataToSerialize);
                     writer.Close();
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("error : XMLSerializer.Serialize:" + (ex.InnerException != null ? ex.InnerException.Message : ex.Message));
-            }
         }
 
         public static T Deserialize<T>(string filePath)
         {
             T serializedData = default(T);
-
-            try
-            {
+            
                 using (Stream stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
                 {
                     var serializer = new DataContractSerializer(typeof(T));
                     serializedData =(T)serializer.ReadObject(stream);
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("error : XMLSerializer.Deserialize" + ex.Message);
-            }
 
             return serializedData;
         }
