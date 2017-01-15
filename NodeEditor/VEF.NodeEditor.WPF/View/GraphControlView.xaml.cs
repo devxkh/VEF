@@ -4,6 +4,8 @@ using Gemini.Modules.GraphEditor.Controls;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
@@ -19,6 +22,36 @@ using System.Windows.Shapes;
 
 namespace DLL.NodeEditor.View
 {
+    public class MyConverter : MarkupExtension, IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            // (This code has zero tolerance)
+            var attributes = value.GetType().GetCustomAttributes(typeof(DisplayNameAttribute), false);
+            if (attributes.Count() > 0)
+            {
+                return (attributes[0] as DisplayNameAttribute).DisplayName;
+            }
+            else
+            {
+                var prop = value.GetType().Name;//.GetProperty("Name");
+                return prop.ToString();
+            }
+
+        //    return ((Enum)value).GetAttributeOfType<DisplayAttribute>().Name;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotSupportedException();
+        }
+
+        public override object ProvideValue(IServiceProvider serviceProvider)
+        {
+            return this;
+        }
+    }
+
     /// <summary>
     /// Interaktionslogik für GraphControl.xaml
     /// </summary>

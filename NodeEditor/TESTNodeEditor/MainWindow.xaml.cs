@@ -66,9 +66,9 @@ namespace TESTNodeEditor
                 List<Type> knownTypes = new List<Type>() { typeof(AnimationNodeViewModel), typeof(OutputNodeViewModel) } ;
 
                 AnimationComponent ac = new AnimationComponent();
-                ac.FB_AnimationComponent.AnimNodes.Add(evm);
-                ac.FB_AnimationComponent.AnimNodes.Add(onvm);
-                ac.FB_AnimationComponent.NodeConnections.Add(cvm);
+                ac.FB_AnimationComponent.AnimationBlendTree.AnimNodes.Add(evm);
+                ac.FB_AnimationComponent.AnimationBlendTree.AnimNodes.Add(onvm);
+                ac.FB_AnimationComponent.AnimationBlendTree.NodeConnections.Add(cvm);
                 
                ObjectSerialize.Serialize(ac, "./test", knownTypes);
 

@@ -159,6 +159,10 @@ namespace VEF.Model.Services
                 if (opener.ValidateContentType(info))
                 {
                     ContentViewModel vm = opener.OpenContent(info, param);
+
+                    if (vm == null)
+                        return null;
+
                     vm.Handler = opener;
                     return vm;
                 }

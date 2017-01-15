@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       
              xmlns:converters="clr-namespace:Gemini.Modules.GraphEditor.Converters"
-                        
+              xmlns:m="clr-namespace:DLL.NodeEditor.View"
+                     
             xmlns:localHelper="clr-namespace:DLL.NodeEditor.Helper"
             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
             xmlns:local="clr-namespace:Gemini.Modules.GraphEditor.Controls"
@@ -104,7 +105,7 @@
                             <StackPanel Orientation="Vertical">
                                 <Border Background="LightSkyBlue" Padding="5 2 2 2" BorderBrush="DodgerBlue"
 												BorderThickness="0 0 0 1" CornerRadius="2 2 0 0">
-                                    <TextBlock HorizontalAlignment="Stretch" Text="{Binding Name}" />
+                                            <TextBlock HorizontalAlignment="Stretch" Text="{Binding Converter={m:MyConverter}}" />
                                 </Border>
                                 <Border>
                                     <Grid>
