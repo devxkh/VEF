@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -88,7 +89,15 @@ namespace DLL.NodeEditor.ViewModel
             }
             set
             {
-                _inputConnectors = value;
+                if (_inputConnectors == null && value != null) //from deserialization
+                {
+                    value.CollectionChanged += this.OnCollectionChanged;
+                    _inputConnectors = value;
+                }
+                else
+                {
+                    _inputConnectors = value;
+                }
             }
         }
 
@@ -118,6 +127,8 @@ namespace DLL.NodeEditor.ViewModel
         public ElementViewModel()
         {
             _inputConnectors = new ObservableCollection<InputConnectorViewModel>();
+            _inputConnectors.CollectionChanged += this.OnCollectionChanged;
+
             _name = GetType().Name;
         }
 
@@ -126,6 +137,22 @@ namespace DLL.NodeEditor.ViewModel
             var inputConnector = new InputConnectorViewModel() { PortId = (uint)(_inputConnectors.Count + 1), Element = this, Name = name, Color = color };
             inputConnector.SourceChanged += (sender, e) => OnInputConnectorConnectionChanged();
             _inputConnectors.Add(inputConnector);
+        }
+
+
+        void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (e.NewItems != null)
+            {
+                foreach (var newItem in e.NewItems)
+                {
+                    var inputConnectorViewModel = newItem as InputConnectorViewModel;
+                    if (inputConnectorViewModel != null)
+                    {
+                        inputConnectorViewModel.Element = this;
+                    }
+                }
+            }
         }
 
         protected void SetOutputConnector(string name, Color color, Func<BitmapSource> valueCallback)
